@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Urban trees of Bengaluru new card</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+  <script src="treemenu2.js"></script>
+  <style type="text/css">a:hover{color:white;background-color: green;} </style>
+
+    </head>
+
+    <body style="background-color: lightgrey">
+    
+     
+ <br><br>
+   <div ng-app="app" ng-controller='AppCtrl'>
+    <div class="container1">
+    <script type="text/ng-template" id="menuTree">
+        {{ menuItem.name }}
+        <div ng-if="menuItem.children">
+     
+            <div ng-repeat="menuItem in menuItem.children" ng-include="'menuTree'">           
+            </div>
+        </div>
+    </script>
+    
+    <ul>
+      <div ng-repeat="menus in menuList.Menu">
+      <div class="row" style="margin-right: -415px;">
+         
+      <!-- ROW
+      
+      
+
+    
+      -->
+    
+          <div>
+          <div ng-repeat="menuItems in menus.MenuItems">
+      
+      <!-- COLUMN
+            -->
+          <div class="col-sm-2" style="background-color:lightgrey;"> <br>
+                <!--Card Reveal-->
+                <div class="card">
+                    <div class="card-image">
+                        <div class="view overlay hm-white-slight z-depth-1">
+                            <img ng-src="{{menuItems.ItemImage}}">
+                            
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{ menuItems.ItemNames }}<i class="material-icons right">more_vert</i></span>
+                        <!--button-->
+                        <body class="w3-container">
+
+<br>
+<a class="w3-btn" href="#">More info</a>
+<!--button end-->
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ menuItems.ItemNames }}<i style="margin: -20px -20px 0 0"class="material-icons right">close</i></span>
+                       <img ng-src="{{menuItems.ItemImageLeaf}}" alt="image" style="width:100px;height:100px; margin:2px 0 0 0">
+                       <img ng-src="{{menuItems.ItemImageSeeds}}" alt="image" style="width:100px;height:100px;margin:2px 0 0 0">
+                       <img ng-src="{{menuItems.ItemImageFlower}}" alt="image" style="width:100px;height:100px;margin:2px 0 0 0">
+                       <img ng-src="{{menuItems.ItemImageBark}}" alt="image" style="width:100px;height:100px;margin:2px 0 0 0">
+
+
+                        <p class="card-text"> Other Name(s): {{ menuItems.ItemLanguage.other.title }}</p>
+                       <p class="card-text"> Botanical Name: {{ menuItems.ItemBotanicalName }} </p>
+            <p class="card-text"> Local Name(s):
+            <br>Hindi - {{ menuItems.ItemLanguage.hin.title }}
+            <br>Kannada - {{ menuItems.ItemLanguage.kan.title }}
+            <br>Tamil - {{ menuItems.ItemLanguage.tam.title }}
+            <br>Telugu - {{ menuItems.ItemLanguage.tel.title }}
+             </p>
+                    </div>
+                </div>
+                <!--/.Card Reveal-->
+            </div>
+
+    
+
+
+
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </ul>
+    </div><div style="text-align: right;">
+    <button class="button" style="vertical-align:middle"><span>Next </span></button>
+</div>
+
+    </div>
+    
+    </body>
+
+  </html>
+        
